@@ -13,18 +13,17 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Welcome to It's me",
       home: Home(),
-      theme: ThemeData(primaryColor: Colors.yellow),
+      theme: ThemeData(primaryColor: Color(0xFFfca104)),
     );
   }
 }
 
 class Home extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Color(0xFFF6F6F6),
       appBar: AppBar(
         title: Text("因你不同"),
         centerTitle: true,
@@ -39,6 +38,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-
-
