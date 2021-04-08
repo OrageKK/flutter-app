@@ -4,7 +4,24 @@ class BasicDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[100],
+      // color: Colors.grey[100],
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(
+              'https://t1.hxzdhn.com/uploads/tu/202011/9999/8fe3e3146d.jpg'),
+          // 对齐方式
+          alignment: Alignment.topCenter,
+          // 填充方式
+          fit: BoxFit.cover,
+          // 滤镜
+          colorFilter: ColorFilter.mode(
+            // 颜色
+            Colors.indigoAccent[400].withOpacity(0.5),
+            // 混合模式
+            BlendMode.hardLight,
+          ),
+        ),
+      ),
       child: Row(
         // 主轴对齐
         mainAxisAlignment: MainAxisAlignment.center,
@@ -17,7 +34,8 @@ class BasicDemo extends StatelessWidget {
             ),
             // BoxDecoration 设置颜色后，Container不能设置color
             // color: Color.fromRGBO(3, 54, 255, 1.0),
-            padding: EdgeInsets.only(left: 8.0, right: 30, top: 20, bottom: 8),
+            padding:
+                EdgeInsets.only(left: 8.0, right: 10.0, top: 8.0, bottom: 8),
             margin: EdgeInsets.all(20.0),
             width: 90.0,
             height: 90.0,
@@ -41,7 +59,7 @@ class BasicDemo extends StatelessWidget {
                 style: BorderStyle.solid,
               ),
               // 圆角
-              borderRadius: BorderRadius.circular(16.0),
+              // borderRadius: BorderRadius.circular(16.0),
               // 单圆角
               // borderRadius: BorderRadius.only(
               //   topLeft: Radius.circular(16.0),
@@ -55,6 +73,24 @@ class BasicDemo extends StatelessWidget {
                   spreadRadius: -9.0, // 扩散 +扩大 -缩小
                 ),
               ],
+              // 改变形状circle与borderRadius冲突
+              shape: BoxShape.circle,
+              // 镜像渐变
+              // gradient: RadialGradient(
+              //   colors: [
+              //     Color.fromRGBO(7, 102, 255, 1.0),
+              //     Color.fromRGBO(123, 96, 180, 1.0),
+              //   ],
+              // ),
+              // 线性渐变
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromRGBO(36, 134, 185, 1.0),
+                  Color.fromRGBO(173, 101, 152, 1.0),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
             ),
           ),
         ],

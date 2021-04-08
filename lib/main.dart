@@ -29,49 +29,50 @@ class Home extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-          backgroundColor: Color(0xFFF6F6F6),
-          appBar: AppBar(
-            title: Text("因你不同"),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.search),
-                tooltip: 'Search',
-                onPressed: () => debugPrint('Search button is pressed.'),
+        backgroundColor: Color(0xFFF6F6F6),
+        appBar: AppBar(
+          title: Text("因你不同"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: 'Search',
+              onPressed: () => debugPrint('Search button is pressed.'),
+            ),
+          ],
+          centerTitle: true,
+          elevation: 0.0,
+          bottom: TabBar(
+            unselectedLabelColor: Colors.black38,
+            // 指示器颜色
+            indicatorColor: Colors.black54,
+            // 指示器大小与图标统一
+            indicatorSize: TabBarIndicatorSize.label,
+            // 指示器宽度
+            indicatorWeight: 1.0,
+            tabs: <Widget>[
+              Tab(
+                icon: Icon(Icons.local_activity),
+              ),
+              Tab(
+                icon: Icon(Icons.change_history),
+              ),
+              Tab(
+                icon: Icon(Icons.directions_bike),
               ),
             ],
-            centerTitle: true,
-            elevation: 0.0,
-            bottom: TabBar(
-              unselectedLabelColor: Colors.black38,
-              // 指示器颜色
-              indicatorColor: Colors.black54,
-              // 指示器大小与图标统一
-              indicatorSize: TabBarIndicatorSize.label,
-              // 指示器宽度
-              indicatorWeight: 1.0,
-              tabs: <Widget>[
-                Tab(
-                  icon: Icon(Icons.local_activity),
-                ),
-                Tab(
-                  icon: Icon(Icons.change_history),
-                ),
-                Tab(
-                  icon: Icon(Icons.directions_bike),
-                ),
-              ],
-            ),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              ListViewDemo(),
-              // Icon(Icons.change_history, size: 128, color: Colors.black12),
-              BasicDemo(),
-              Icon(Icons.directions_bike, size: 128, color: Colors.black12),
-            ],
-          ),
-          drawer: DrawerDemo(),
-          bottomNavigationBar: BottomNavigationBarDemo()),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            ListViewDemo(),
+            // Icon(Icons.change_history, size: 128, color: Colors.black12),
+            BasicDemo(),
+            Icon(Icons.directions_bike, size: 128, color: Colors.black12),
+          ],
+        ),
+        drawer: DrawerDemo(),
+        bottomNavigationBar: BottomNavigationBarDemo(),
+      ),
     );
   }
 }
