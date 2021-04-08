@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'demo/drawer_demo.dart';
 import 'demo/listView-demo.dart';
 
 void main() {
@@ -24,113 +25,50 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
-        child: Scaffold(
-            backgroundColor: Color(0xFFF6F6F6),
-            appBar: AppBar(
-              title: Text("因你不同"),
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.search),
-                  tooltip: 'Search',
-                  onPressed: () => debugPrint('Search button is pressed.'),
-                ),
-              ],
-              centerTitle: true,
-              elevation: 0.0,
-              bottom: TabBar(
-                unselectedLabelColor: Colors.black38,
-                // 指示器颜色
-                indicatorColor: Colors.black54,
-                // 指示器大小与图标统一
-                indicatorSize: TabBarIndicatorSize.label,
-                // 指示器宽度
-                indicatorWeight: 1.0,
-                tabs: <Widget>[
-                  Tab(
-                    icon: Icon(Icons.local_activity),
-                  ),
-                  Tab(
-                    icon: Icon(Icons.change_history),
-                  ),
-                  Tab(
-                    icon: Icon(Icons.directions_bike),
-                  ),
-                ],
-              ),
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Color(0xFFF6F6F6),
+        appBar: AppBar(
+          title: Text("因你不同"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: 'Search',
+              onPressed: () => debugPrint('Search button is pressed.'),
             ),
-            body: TabBarView(
-              children: <Widget>[
-                Icon(Icons.local_activity, size: 128, color: Colors.black12),
-                Icon(Icons.change_history, size: 128, color: Colors.black12),
-                Icon(Icons.directions_bike, size: 128, color: Colors.black12),
-              ],
-            ),
-            drawer: Drawer(
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  UserAccountsDrawerHeader(
-                    accountName: Text(
-                      'Oragekk',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    accountEmail: Text('Oragekk@gmail.com'),
-                    currentAccountPicture: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://avatars.githubusercontent.com/u/18461481?v=4'),
-                    ),
-                    decoration: BoxDecoration(
-                        color: Colors.yellow[400],
-                        image: DecorationImage(
-                            image: NetworkImage(
-                                'https://t1.hxzdhn.com/uploads/tu/202011/9999/f8bf76bd21.jpg'),
-                            // 填满整个区域
-                            fit: BoxFit.cover,
-                            // 滤镜（ColorFilter.mode 两个参数：颜色，混合模式）
-                            colorFilter: ColorFilter.mode(
-                              Colors.yellow[400].withOpacity(0.6),
-                              BlendMode.srcOver,
-                            ))),
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Messages',
-                      textAlign: TextAlign.right,
-                    ),
-                    trailing: Icon(
-                      Icons.message,
-                      color: Colors.black12,
-                      size: 22.0,
-                    ),
-                    onTap: () => Navigator.pop(context),
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Favorite',
-                      textAlign: TextAlign.right,
-                    ),
-                    trailing: Icon(
-                      Icons.favorite,
-                      color: Colors.black12,
-                      size: 22.0,
-                    ),
-                    onTap: () => Navigator.pop(context),
-                  ),
-                  ListTile(
-                    title: Text(
-                      'Settings',
-                      textAlign: TextAlign.right,
-                    ),
-                    trailing: Icon(
-                      Icons.settings,
-                      color: Colors.black12,
-                      size: 22.0,
-                    ),
-                    onTap: () => Navigator.pop(context),
-                  ),
-                ],
+          ],
+          centerTitle: true,
+          elevation: 0.0,
+          bottom: TabBar(
+            unselectedLabelColor: Colors.black38,
+            // 指示器颜色
+            indicatorColor: Colors.black54,
+            // 指示器大小与图标统一
+            indicatorSize: TabBarIndicatorSize.label,
+            // 指示器宽度
+            indicatorWeight: 1.0,
+            tabs: <Widget>[
+              Tab(
+                icon: Icon(Icons.local_activity),
               ),
-            )));
+              Tab(
+                icon: Icon(Icons.change_history),
+              ),
+              Tab(
+                icon: Icon(Icons.directions_bike),
+              ),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            Icon(Icons.local_activity, size: 128, color: Colors.black12),
+            Icon(Icons.change_history, size: 128, color: Colors.black12),
+            Icon(Icons.directions_bike, size: 128, color: Colors.black12),
+          ],
+        ),
+        drawer: DrawerDemo(),
+      ),
+    );
   }
 }
