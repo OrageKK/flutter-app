@@ -5,6 +5,45 @@ class BasicDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey[100],
+      child: Row(
+        // 主轴对齐
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: Icon(
+              Icons.pool,
+              size: 32.0,
+              color: Colors.white,
+            ),
+            // BoxDecoration 设置颜色后，Container不能设置color
+            // color: Color.fromRGBO(3, 54, 255, 1.0),
+            padding: EdgeInsets.only(left: 8.0, right: 30, top: 20, bottom: 8),
+            margin: EdgeInsets.all(20.0),
+            width: 90.0,
+            height: 90.0,
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(3, 54, 255, 1.0),
+              // border: Border(
+              //   top: BorderSide(
+              //     color: Colors.indigoAccent[100],
+              //     width: 3.0,
+              //     style: BorderStyle.solid,
+              //   ),
+              //   bottom: BorderSide(
+              //     color: Colors.indigoAccent[100],
+              //     width: 3.0,
+              //     style: BorderStyle.solid,
+              //   ),
+              // ),
+              border: Border.all(
+                color: Colors.indigoAccent[100],
+                width: 3.0,
+                style: BorderStyle.solid,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
