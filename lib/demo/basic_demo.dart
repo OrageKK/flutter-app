@@ -40,6 +40,21 @@ class BasicDemo extends StatelessWidget {
                 width: 3.0,
                 style: BorderStyle.solid,
               ),
+              // 圆角
+              borderRadius: BorderRadius.circular(16.0),
+              // 单圆角
+              // borderRadius: BorderRadius.only(
+              //   topLeft: Radius.circular(16.0),
+              //   bottomRight: Radius.circular(16.0),
+              // ),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0.0, 16.0), // 偏移 x轴,y轴
+                  color: Color.fromRGBO(16, 20, 188, 1.0),
+                  blurRadius: 25.0, // 模糊
+                  spreadRadius: -9.0, // 扩散 +扩大 -缩小
+                ),
+              ],
             ),
           ),
         ],
