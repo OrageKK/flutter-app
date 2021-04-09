@@ -6,7 +6,77 @@ class LayoutDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Icon(Icons.directions_bike, size: 128, color: Colors.black12),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // IconBadge(
+          //   Icons.pool,
+          // ),
+          // IconBadge(
+          //   Icons.beach_access,
+          //   size: 64.0,
+          // ),
+          // IconBadge(
+          //   Icons.airplay_rounded,
+          // ),
+          Stack(
+            /**
+             * Stack会把小部件叠加到一起，第一个Sizebox的尺寸是最大的，所以它会相当于一个底板
+             * alignment的设置是相对于底板来设置，生效给没对齐的部件
+             */
+            alignment: Alignment.topLeft,
+            children: [
+              SizedBox(
+                width: 200.0,
+                height: 300.0,
+                child: Container(
+                  alignment: Alignment(0.0, -0.9), // (x,y)
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(3, 54, 255, 1.0),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 32.0,
+              ),
+              SizedBox(
+                width: 100.0,
+                height: 100.0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(3, 54, 255, 1.0),
+                    shape: BoxShape.circle,
+                    // 渐变-镜像
+                    gradient: RadialGradient(
+                      colors: [
+                        Color.fromRGBO(7, 102, 255, 1.0),
+                        Color.fromRGBO(3, 54, 255, 1.0),
+                      ],
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.brightness_2,
+                    color: Colors.white,
+                    size: 32.0,
+                  ),
+                ),
+              ),
+              Positioned(
+                // 绝对定位
+                right: 20.0,
+                top: 20.0,
+                child: Icon(
+                  Icons.ac_unit,
+                  color: Colors.white,
+                  size: 32.0,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
