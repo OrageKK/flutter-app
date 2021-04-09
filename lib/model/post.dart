@@ -1,8 +1,8 @@
 class Post {
   const Post({
-    this.title,
-    this.author,
-    this.imageUrl,
+    required this.title,
+    required this.author,
+    required this.imageUrl,
   });
 
   final String title;

@@ -16,7 +16,7 @@ class BasicDemo extends StatelessWidget {
           // 滤镜
           colorFilter: ColorFilter.mode(
             // 颜色
-            Colors.indigoAccent[400].withOpacity(0.5),
+            Colors.indigoAccent[400]!.withOpacity(0.5),
             // 混合模式
             BlendMode.hardLight,
           ),
@@ -54,7 +54,7 @@ class BasicDemo extends StatelessWidget {
               //   ),
               // ),
               border: Border.all(
-                color: Colors.indigoAccent[100],
+                color: Colors.indigoAccent[100]!,
                 width: 3.0,
                 style: BorderStyle.solid,
               ),
@@ -103,7 +103,7 @@ class BasicDemo extends StatelessWidget {
  * Text--行内不同样式 
 */
 class RichTextDemo extends StatelessWidget {
-  const RichTextDemo({Key key}) : super(key: key);
+  const RichTextDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
