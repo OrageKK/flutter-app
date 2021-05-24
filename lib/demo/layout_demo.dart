@@ -24,7 +24,7 @@ class LayoutDemo extends StatelessWidget {
           ConstrainedBox(
             constraints: BoxConstraints(
               minHeight: 200.0,
-              maxWidth: 200.0,
+              maxWidth: 200.0, 
             ),
             child: Container(
               color: Color.fromRGBO(3, 54, 255, 1.0),
