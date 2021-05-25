@@ -4,13 +4,51 @@ import '../model/post.dart';
 class ViewDemo extends StatelessWidget {
   const ViewDemo({Key? key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return GridViewExtentDemo();
+  }
+}
+
+class GridViewExtentDemo extends StatelessWidget {
+  const GridViewExtentDemo({Key? key}) : super(key: key);
+
   List<Widget> _buildTiles(int length) {
     return List.generate(length, (index) {
       return Container(
         color: Colors.grey[300],
         alignment: Alignment(0.0, 0.0),
         child: Text(
-          'Item',
+          'Item$index',
+          style: TextStyle(fontSize: 18.0, color: Colors.grey),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.extent(
+      maxCrossAxisExtent: 150.0, // 交叉轴最大尺寸
+      crossAxisSpacing: 16.0, // 交叉轴（横轴） 间距
+      mainAxisSpacing: 16.0, // 主轴 间距
+      // scrollDirection: Axis.horizontal, // 滚动方向
+      children: _buildTiles(100),
+    );
+  }
+}
+
+/// 网格视图
+class GridViewCountDemo extends StatelessWidget {
+  const GridViewCountDemo({Key? key}) : super(key: key);
+
+  List<Widget> _buildTiles(int length) {
+    return List.generate(length, (index) {
+      return Container(
+        color: Colors.grey[300],
+        alignment: Alignment(0.0, 0.0),
+        child: Text(
+          'Item$index',
           style: TextStyle(fontSize: 18.0, color: Colors.grey),
         ),
       );
