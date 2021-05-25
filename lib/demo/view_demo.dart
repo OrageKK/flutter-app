@@ -4,6 +4,34 @@ import '../model/post.dart';
 class ViewDemo extends StatelessWidget {
   const ViewDemo({Key? key}) : super(key: key);
 
+  List<Widget> _buildTiles(int length) {
+    return List.generate(length, (index) {
+      return Container(
+        color: Colors.grey[300],
+        alignment: Alignment(0.0, 0.0),
+        child: Text(
+          'Item',
+          style: TextStyle(fontSize: 18.0, color: Colors.grey),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 3, // 交叉轴（横轴） 数量
+      crossAxisSpacing: 16.0, // 交叉轴（横轴） 间距
+      mainAxisSpacing: 16.0, // 主轴 间距
+      scrollDirection: Axis.horizontal, // 滚动方向
+      children: _buildTiles(100),
+    );
+  }
+}
+
+class PageViewBuildrDemo extends StatelessWidget {
+  const PageViewBuildrDemo({Key? key}) : super(key: key);
+
   Widget _pageItemBuilder(BuildContext context, int index) {
     return Stack(
       children: [
@@ -11,6 +39,7 @@ class ViewDemo extends StatelessWidget {
           child: Image.network(posts[index].imageUrl, fit: BoxFit.cover),
         ),
         Positioned(
+          // 绝对定位容器
           bottom: 8.0,
           left: 8.0,
           child: Column(
