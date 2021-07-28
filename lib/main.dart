@@ -5,6 +5,7 @@ import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/listView-demo.dart';
 import 'demo/view_demo.dart';
+import 'demo/sliver_demo.dart';
 
 void main() {
   runApp(App());
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Welcome to It's me",
-        home: Home(),
+        home: SliverDemo(),
         theme: ThemeData(
             primarySwatch: Colors.yellow,
             highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
