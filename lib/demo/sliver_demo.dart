@@ -9,6 +9,28 @@ class SliverDemo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
+          SliverAppBar(
+            title: Text('因你不同'),
+            // pinned: true, // 固定不跟随滚动
+            floating: true, // 跟随滚动，向下滚动随时显示
+            expandedHeight: 178.0,
+            // 带渐进动画的伸缩空间
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(
+                '上冬十二 Flutter'.toUpperCase(), // toUpperCase 全大写
+                style: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.black87,
+                  letterSpacing: 3.0, // 字间距：逻辑像素为单位
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              background: Image.network(
+                'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg34.51tietu.net%2Fpic%2F2016-120602%2F20161206024422s2tekllccqr106323.jpg&refer=http%3A%2F%2Fimg34.51tietu.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1630141603&t=7cc46fa76102e8825c4a54b314deefca',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           SliverSafeArea(
             sliver: SliverPadding(
               padding: EdgeInsets.all(8.0),
@@ -40,6 +62,7 @@ class SliverListDemo extends StatelessWidget {
             clipBehavior: Clip.antiAlias, // 为提升性能默认为Clip.none
             elevation: 14.0, // 阴影
             shadowColor: Colors.grey.withOpacity(0.5),
+            color: Colors.red,
             child: Stack(
               children: [
                 AspectRatio(

@@ -18,7 +18,7 @@ class App extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Welcome to It's me",
-        home: SliverDemo(),
+        home: Home(),
         theme: ThemeData(
             primarySwatch: Colors.yellow,
             highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
@@ -73,7 +73,7 @@ class Home extends StatelessWidget {
             ListViewDemo(),
             BasicDemo(),
             LayoutDemo(),
-            ViewDemo(),
+            SliverDemo(),
           ],
         ),
         drawer: DrawerDemo(),
